@@ -13,4 +13,11 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.Shoppingue.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/penguin_white_dark</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_round</item>
+        <item name="postSplashScreenTheme">@style/Theme.Shoppingue</item>
+    </style>
+
 </resources>
