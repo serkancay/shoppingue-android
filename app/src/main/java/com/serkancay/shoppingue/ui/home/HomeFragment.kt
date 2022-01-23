@@ -5,11 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.serkancay.shoppingue.databinding.FragmentHomeBinding
-import com.serkancay.shoppingue.model.Product
+import com.serkancay.shoppingue.ui.ProductsViewModel
 
 class HomeFragment : Fragment() {
+
+    private val viewModel: ProductsViewModel by activityViewModels()
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -22,14 +25,11 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val productsAdapter = ProductsAdapter { }
-        productsAdapter.submitList(mutableListOf(
-            Product(1, "Pringles", "https://picsum.photos/300", "₺29.90"),
-            Product(2, "Powerbank", "https://picsum.photos/300", "₺119.90"),
-            Product(3, "Portakal Kg", "https://picsum.photos/300", "₺3.70"),
-        ))
-
         binding.productsRecyclerView.layoutManager = GridLayoutManager(context, 2)
         binding.productsRecyclerView.adapter = productsAdapter
+        viewModel.products.observe(viewLifecycleOwner, {
+            productsAdapter.submitList(it)
+        })
     }
 
     override fun onDestroyView() {
