@@ -7,6 +7,10 @@
         <variable
             name="viewModel"
             type="com.serkancay.shoppingue.ui.main.ProductsViewModel" />
+
+        <variable
+            name="fragment"
+            type="com.serkancay.shoppingue.ui.cart.CartFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            android:onClick="@{() -> fragment.onClickCheckout()}"
             android:text="@string/checkout"
             app:isVisible="@{viewModel.cartProducts.size() > 0}"
             app:layout_constraintBottom_toBottomOf="parent"

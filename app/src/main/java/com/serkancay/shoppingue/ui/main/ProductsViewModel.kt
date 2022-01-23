@@ -43,4 +43,9 @@ class ProductsViewModel : ViewModel() {
         refreshCartProducts()
     }
 
+    fun clearCart() {
+        getProducts()
+        refreshCartProducts()
+    }
+
 }

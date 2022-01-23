@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="fragment"
+            type="com.serkancay.shoppingue.ui.completed.CompletedFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,6 +38,7 @@
             android:id="@+id/return_to_home_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="@{() -> fragment.onClickReturnToHome()}"
             android:text="@string/return_to_home"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

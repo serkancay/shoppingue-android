@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.serkancay.shoppingue.R
 import com.serkancay.shoppingue.databinding.FragmentCartBinding
 import com.serkancay.shoppingue.ui.main.ProductsViewModel
 
@@ -26,6 +28,7 @@ class CartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.viewModel = viewModel
+        binding.fragment = this
         val cartProductsAdapter = CartProductsAdapter()
         binding.cartProductsRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.cartProductsRecyclerView.adapter = cartProductsAdapter
@@ -34,6 +37,10 @@ class CartFragment : Fragment() {
             cartProductsAdapter.submitList(products)
         })
         viewModel.refreshCartProducts()
+    }
+
+    fun onClickCheckout() {
+        findNavController().navigate(R.id.action_cartFragment_to_completedFragment)
     }
 
 }
