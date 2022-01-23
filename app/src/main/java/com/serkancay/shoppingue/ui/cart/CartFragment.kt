@@ -9,7 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.serkancay.shoppingue.databinding.FragmentCartBinding
-import com.serkancay.shoppingue.ui.ProductsViewModel
+import com.serkancay.shoppingue.ui.main.ProductsViewModel
 
 class CartFragment : Fragment() {
 

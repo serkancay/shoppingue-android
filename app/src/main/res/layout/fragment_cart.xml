@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.serkancay.shoppingue.ui.ProductsViewModel" />
+            type="com.serkancay.shoppingue.ui.main.ProductsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

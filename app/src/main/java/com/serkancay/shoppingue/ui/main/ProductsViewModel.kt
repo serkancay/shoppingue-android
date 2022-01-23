@@ -1,4 +1,4 @@
-package com.serkancay.shoppingue.ui
+package com.serkancay.shoppingue.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

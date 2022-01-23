@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.serkancay.shoppingue.databinding.FragmentHomeBinding
-import com.serkancay.shoppingue.ui.ProductsViewModel
+import com.serkancay.shoppingue.ui.main.ProductsViewModel
 
 class HomeFragment : Fragment() {
 
