@@ -26,6 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
+                app:imageUrl="@{item.imageUrl}"
                 app:layout_constraintBottom_toTopOf="@id/product_name_text_view"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
