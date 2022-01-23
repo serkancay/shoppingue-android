@@ -8,8 +8,10 @@ import com.serkancay.shoppingue.model.Product
 class ProductsViewModel : ViewModel() {
 
     private val _products = MutableLiveData<List<Pair<Boolean, Product>>>()
+    private val _cartProducts = MutableLiveData<List<Product>>()
 
     val products: LiveData<List<Pair<Boolean, Product>>> = _products
+    val cartProducts: LiveData<List<Product>> = _cartProducts
 
     init {
         getProducts()
@@ -26,6 +28,10 @@ class ProductsViewModel : ViewModel() {
         )
     }
 
+    fun refreshCartProducts() {
+        _cartProducts.value = _products.value?.filter { it.first }?.map { it.second }
+    }
+
     fun addProductToCart(product: Product) {
         val allProducts = _products.value?.toMutableList() ?: return
         allProducts.forEachIndexed { index, pair ->
@@ -34,6 +40,7 @@ class ProductsViewModel : ViewModel() {
             }
         }
         _products.postValue(allProducts)
+        refreshCartProducts()
     }
 
 }
