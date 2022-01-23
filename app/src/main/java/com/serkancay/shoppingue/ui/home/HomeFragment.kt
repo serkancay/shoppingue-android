@@ -24,7 +24,9 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val productsAdapter = ProductsAdapter { }
+        val productsAdapter = ProductsAdapter {
+            viewModel.addProductToCart(it.second)
+        }
         binding.productsRecyclerView.layoutManager = GridLayoutManager(context, 2)
         binding.productsRecyclerView.adapter = productsAdapter
         viewModel.products.observe(viewLifecycleOwner, {
