@@ -19,12 +19,12 @@ class ProductsViewModel : ViewModel() {
 
     private fun getProducts() {
         _products.value = listOf(
-            Pair(false, Product(1, "Pringles", "https://loremflickr.com/300/300/pringles", "₺29.90")),
-            Pair(false, Product(2, "Powerbank", "https://loremflickr.com/300/300/powerbank", "₺119.90")),
-            Pair(false, Product(3, "Orange 1 Kg", "https://loremflickr.com/300/300/orange,fruit", "₺3.70")),
-            Pair(false, Product(4, "Water Small", "https://loremflickr.com/300/300/water", "₺1.50")),
+            Pair(false, Product(1, "Pringles", "https://loremflickr.com/300/300/pringles,chips/all", "₺29.90")),
+            Pair(false, Product(2, "Powerbank", "https://loremflickr.com/300/300/powerbank,phone/all", "₺119.90")),
+            Pair(false, Product(3, "Orange (1 Kg)", "https://loremflickr.com/300/300/orange,fruit/all", "₺3.70")),
+            Pair(false, Product(4, "Water (Small)", "https://loremflickr.com/300/300/water,bottle/all", "₺1.50")),
             Pair(false, Product(5, "Chocolate Bar", "https://loremflickr.com/300/300/chocolate", "₺21.65")),
-            Pair(false, Product(6, "Bread", "https://loremflickr.com/300/300/bread", "₺2.00")),
+            Pair(false, Product(6, "Bread", "https://loremflickr.com/300/300/bread,food/all", "₺2.00")),
         )
     }
 
