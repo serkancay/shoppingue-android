@@ -19,4 +19,7 @@ object RemoteConfigUtil {
         remoteConfig.fetchAndActivate()
     }
 
+    val helloMessage: String
+        get() = remoteConfig.getString("hello_message")
+
 }

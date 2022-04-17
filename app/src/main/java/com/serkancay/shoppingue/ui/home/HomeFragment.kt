@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.serkancay.shoppingue.databinding.FragmentHomeBinding
 import com.serkancay.shoppingue.ui.main.ProductsViewModel
+import com.serkancay.shoppingue.util.RemoteConfigUtil
 
 class HomeFragment : Fragment() {
 
@@ -32,6 +33,7 @@ class HomeFragment : Fragment() {
         viewModel.products.observe(viewLifecycleOwner, {
             productsAdapter.submitList(it)
         })
+        binding.welcomeTextView.text = RemoteConfigUtil.helloMessage
     }
 
     override fun onDestroyView() {
